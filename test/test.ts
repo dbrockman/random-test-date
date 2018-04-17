@@ -1,4 +1,4 @@
-import { addMilliseconds, nextDate, randomDate } from "../src";
+import { addMilliseconds, nextDate, previousDate, randomDate } from "../src";
 
 test("that randomDate return a valid date", () => {
   expect(randomDate()).toBeInstanceOf(Date);
@@ -23,6 +23,11 @@ test("that addMilliseconds adds the amout of milliseconds", () => {
 });
 
 test("that nextDate adds one millisecond", () => {
-  const ref = randomDate().getTime();
-  expect(nextDate(ref).getTime()).toBe(ref + 1);
+  const ref = randomDate();
+  expect(nextDate(ref).getTime()).toBe(ref.getTime() + 1);
+});
+
+test("that previousDate adds one millisecond", () => {
+  const ref = randomDate();
+  expect(previousDate(ref).getTime()).toBe(ref.getTime() - 1);
 });

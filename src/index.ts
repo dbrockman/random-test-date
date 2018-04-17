@@ -16,15 +16,23 @@ export const randomDate = () =>
  * Add the specified number of milliseconds to the given date.
  * @param date the reference date
  * @param amount the amount of milliseconds to be added
- * @returns the new date with the milliseconds added to the reference date
+ * @returns a new date with the milliseconds added to the reference date
  */
 export const addMilliseconds = (date: Date | number | string, amount: number) =>
   new Date(ms(date) + amount);
 
 /**
- *
+ * Add one millisecond to the given date.
  * @param date the reference date
- * @returns the new date with one millisecond added to the reference date
+ * @returns a new date with one millisecond added to the reference date
  */
 export const nextDate = (date: Date | number | string) =>
   addMilliseconds(date, 1);
+
+/**
+ * Subtract one millisecond from the given date.
+ * @param date the reference date
+ * @returns a new date with one millisecond subtracted to the reference date
+ */
+export const previousDate = (date: Date | number | string) =>
+  addMilliseconds(date, -1);
