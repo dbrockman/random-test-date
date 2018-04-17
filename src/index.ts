@@ -7,7 +7,7 @@ const min = ms("0000-01-01T00:00:00.000Z");
 const max = ms("9999-12-31T23:59:59.999Z");
 
 /**
- * @returns a new date with a random time between `0000-01-01T00:00:00.000Z` and `9999-12-31T23:59:59.999Z`.
+ * Returns a new date with a random time between `0000-01-01T00:00:00.000Z` and `9999-12-31T23:59:59.999Z`.
  */
 export const randomDate = () =>
   new Date(Math.floor(Math.random() * (max - min + 1)) + min);
