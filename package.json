@@ -1,6 +1,6 @@
 {
   "name": "random-test-date",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tiny util to create random date objects in tests.",
   "files": [
     "build"
