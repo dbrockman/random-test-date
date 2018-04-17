@@ -1,0 +1,43 @@
+{
+  "name": "random-test-date",
+  "version": "1.0.0",
+  "files": [
+    "build"
+  ],
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "prepare": "yarn run build",
+    "lint": "tslint --project tsconfig.json && prettier --debug-check --loglevel warn {src,test}/**/*.ts",
+    "fix": "tslint --project tsconfig.json --fix && prettier --write --loglevel warn {src,test}/**/*.ts",
+    "test": "jest",
+    "build": "rm -rf .tsc_output build && tsc && cp -R .tsc_output/src build && rm -rf .tsc_output"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.5",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1",
+    "ts-jest": "^22.4.3",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.8.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/test/**/*.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "repository": "git@github.com:dbrockman/random-test-date.git",
+  "author": "David Brockman Smoliansky <david@springworks.se>",
+  "license": "MIT"
+}
